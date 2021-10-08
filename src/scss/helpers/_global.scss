@@ -1,0 +1,17 @@
+body {
+	font-family: 'ProximaNova-Regular', sans-serif;
+	font-weight: normal;
+	color: black;
+	font-size: 16px;
+	line-height: 19px;
+}
+.app {
+	height: 100vh;
+}
+
+.wrapper {
+	height: 100%;
+	display: grid;
+	grid-template-columns: 211px auto;
+	grid-auto-rows: auto 101px;
+}
