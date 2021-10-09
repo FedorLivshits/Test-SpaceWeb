@@ -1,10 +1,25 @@
 import React from 'react'
 import notification from '../../images/vector/notification-icon.svg'
 import { NavLink } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { menuOpenSelector } from '../../redux/helpers/selectors'
+import { setMenuOpen } from '../../redux/reducers/app-reducer'
 
 export const UserInfoPanel = () => {
+	const dispatch = useDispatch()
+	const menuOpen = useSelector(menuOpenSelector)
+	const onMenuOpen = () => {
+		dispatch(setMenuOpen(!menuOpen))
+	}
 	return (
 		<section className='user-info'>
+			<div
+				className={menuOpen ? 'burger-menu burger-menu--active' : 'burger-menu'}
+				onClick={onMenuOpen}>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 			<ul className='user-info__nav'>
 				<li className='account'>
 					<NavLink className='account__link' exact to='/account'>

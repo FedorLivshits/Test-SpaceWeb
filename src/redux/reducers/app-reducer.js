@@ -3,9 +3,11 @@ import { generateId } from '../helpers/idGenerator'
 
 const ADD_ARTICLES = 'app-reducer/ADD_ARTICLES'
 const TOGGLE_ARTICLE = 'app-reducer/TOGGLE_ARTICLE'
+const SET_MENU_OPEN = 'app-reducer/TOGGLE_MENU_OPEN'
 
 let initialState = {
 	articles: null,
+	isMenuOpen: false,
 }
 
 const appReducer = (state = initialState, action) => {
@@ -25,6 +27,11 @@ const appReducer = (state = initialState, action) => {
 					return a
 				}),
 			}
+		case SET_MENU_OPEN:
+			return {
+				...state,
+				isMenuOpen: action.menuOpen,
+			}
 		default:
 			return state
 	}
@@ -32,6 +39,7 @@ const appReducer = (state = initialState, action) => {
 
 export const addArticles = articles => ({ type: ADD_ARTICLES, articles })
 export const toggleArticles = id => ({ type: TOGGLE_ARTICLE, id })
+export const setMenuOpen = menuOpen => ({ type: SET_MENU_OPEN, menuOpen })
 
 export const getArticles = url => {
 	return async dispatch => {

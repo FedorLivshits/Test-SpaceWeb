@@ -6,10 +6,14 @@ import journal from '../../images/vector/journal-icon.svg'
 import vps from '../../images/vector/vps-icon.svg'
 import { SideBarLink } from './SidebarLink/SidebarLink'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { menuOpenSelector } from '../../redux/helpers/selectors'
 
 export const Sidebar = () => {
+	const menuOpen = useSelector(menuOpenSelector)
+
 	return (
-		<aside className='sidebar'>
+		<aside className={menuOpen ? 'sidebar sidebar--active' : 'sidebar'}>
 			<div className='sidebar__inner'>
 				<NavLink className='sidebar__logo' to='/main'>
 					<img className='sidebar__logo-img' src={logo} alt='logo' />

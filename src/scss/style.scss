@@ -2,6 +2,7 @@
 @import 'helpers/global';
 @import 'helpers/fonts';
 @import 'helpers/vars';
+@import 'helpers/media';
 
 .sidebar {
 	background: #062436;
@@ -45,9 +46,11 @@
 }
 
 .user-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	&__nav {
 		display: flex;
-		justify-content: end;
 	}
 	&__nav li {
 		padding: 24px 0 22px 0;
