@@ -111,7 +111,7 @@
 		font-weight: 400;
 		padding: 20px 0;
 		border-bottom: 2px solid #f0f5f7;
-        cursor: pointer;
+		cursor: pointer;
 	}
 	&__btn {
 		border: none;
@@ -119,9 +119,13 @@
 		cursor: pointer;
 	}
 	&__content {
-        display: none;
-		max-width: 760px;
+		display: none;
+		max-width: 900px;
 		padding-bottom: 24px;
+		&--active {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 }
 
