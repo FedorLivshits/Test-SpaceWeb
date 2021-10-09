@@ -15,3 +15,9 @@ body {
 	grid-template-columns: 211px auto;
 	grid-auto-rows: auto 101px;
 }
+
+.content {
+	background: #f7fafb;
+	display: flex;
+	flex-direction: column;
+}
