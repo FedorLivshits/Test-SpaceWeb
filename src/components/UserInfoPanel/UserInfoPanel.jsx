@@ -1,34 +1,35 @@
 import React from 'react'
 import notification from '../../images/vector/notification-icon.svg'
+import { NavLink } from 'react-router-dom'
 
 export const UserInfoPanel = () => {
 	return (
 		<section className='user-info'>
 			<ul className='user-info__nav'>
 				<li className='account'>
-					<a className='account__link' href='/#'>
+					<NavLink className='account__link' exact to='/account'>
 						100.00 ₽
-					</a>
+					</NavLink>
 				</li>
 				<li className='notification'>
-					<a href='/#' className='notification__link'>
+					<NavLink exact to='/notification' className='notification__link'>
 						<img
 							src={notification}
 							alt='notifications'
 							className='notification__link-img'
 						/>
 						<span className='notification__count'>1</span>
-					</a>
+					</NavLink>
 				</li>
 				<li className='user'>
-					<a href='/#' className='user__link'>
+					<NavLink exact to='/user' className='user__link'>
 						vikavishny
-					</a>
+					</NavLink>
 				</li>
 				<li className='exit'>
-					<a href='/#' className='exit__link'>
+					<NavLink exact to='/exit' className='exit__link'>
 						Выход
-					</a>
+					</NavLink>
 				</li>
 			</ul>
 		</section>

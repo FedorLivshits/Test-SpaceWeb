@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import arrow from '../../images/vector/arrow-icon.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { getArticles } from '../../redux/reducers/app-reducer'
-import { articlesSelector, loadingSelector } from '../../redux/selectors'
+import { articlesSelector } from '../../redux/helpers/selectors'
 import { toggleArticles } from '../../redux/reducers/app-reducer'
 
 export const ArticlesPanel = () => {
@@ -10,7 +10,7 @@ export const ArticlesPanel = () => {
 	const articles = useSelector(articlesSelector)
 
 	useEffect(() => {
-		dispatch(getArticles('GET', 'https://sweb.ru/export/turbojournal/'))
+		dispatch(getArticles('https://sweb.ru/export/turbojournal/'))
 	}, [])
 
 	const onArticleClick = id => {

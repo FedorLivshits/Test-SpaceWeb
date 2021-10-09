@@ -1,7 +1,7 @@
 @import 'helpers/reset';
-@import 'helpers/media';
 @import 'helpers/global';
 @import 'helpers/fonts';
+@import 'helpers/vars';
 
 .sidebar {
 	background: #062436;
@@ -14,10 +14,9 @@
 		margin-left: 20px;
 	}
 	&__list-item {
-		margin-bottom: 32px;
-		padding: 13px 12px 10px 20px;
 		position: relative;
-		&--active {
+		.active {
+			transition: all 0.2s ease-in;
 			background: #15526a;
 			&::before {
 				content: '';
@@ -25,13 +24,15 @@
 				top: 0;
 				left: 0;
 				bottom: 0;
-				background: #3dbdf6;
+				background: $link-color;
 				height: 100%;
 				width: 6px;
 			}
 		}
 	}
 	&__list-link {
+		margin-bottom: 32px;
+		padding: 13px 12px 10px 20px;
 		display: flex;
 		align-items: center;
 		color: white;
@@ -85,7 +86,7 @@
 		padding-top: 16px;
 		text-transform: uppercase;
 		color: #062436;
-		border-bottom: 2px solid #f0f5f7;
+		border-bottom: 2px solid $border-color;
 		&-subtitle {
 			font-size: 12px;
 			font-weight: normal;
@@ -118,7 +119,7 @@
 	&__head {
 		display: flex;
 		justify-content: space-between;
-		border-bottom: 2px solid #f0f5f7;
+		border-bottom: 2px solid $border-color;
 		cursor: pointer;
 	}
 	&__title {
@@ -155,7 +156,7 @@
 			margin: 15px 0;
 		}
 		a {
-			color: #3dbdf6;
+			color: $link-color;
 			position: relative;
 			&::after {
 				content: '';
@@ -165,7 +166,7 @@
 				left: 0;
 				height: 1px;
 				width: 100%;
-				background: #3dbdf6;
+				background: $link-color;
 			}
 		}
 		img {
@@ -185,8 +186,8 @@
 	font-size: 12px;
 	line-height: 15px;
 	padding: 20px 20px 36px 20px;
-	background: #f7fafb;
+	background: $background-color;
 	a {
-		color: #3dbdf6;
+		color: $link-color;
 	}
 }

@@ -1,17 +1,13 @@
-import React from "react"
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-export const SideBarLink = ({ path, icon, pageName, active }) => {
+export const SideBarLink = ({ path, icon, pageName }) => {
 	return (
-		<li
-			className={
-				active
-					? 'sidebar__list-item sidebar__list-item--active'
-					: 'sidebar__list-item'
-			}>
-			<a className='sidebar__list-link' href={path}>
+		<li className='sidebar__list-item'>
+			<NavLink className='sidebar__list-link' exact to={path}>
 				<img className='sidebar__list-icon' src={icon} alt='user-icon' />
 				{pageName}
-			</a>
+			</NavLink>
 		</li>
 	)
 }

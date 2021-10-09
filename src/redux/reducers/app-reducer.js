@@ -1,4 +1,5 @@
-import { requestXMLData } from '../../api/xmlData-api'
+import { fetchXMLData } from '../../api/fetchXMLData'
+import { generateId } from '../helpers/idGenerator'
 
 const ADD_ARTICLES = 'app-reducer/ADD_ARTICLES'
 const TOGGLE_ARTICLE = 'app-reducer/TOGGLE_ARTICLE'
@@ -32,14 +33,9 @@ const appReducer = (state = initialState, action) => {
 export const addArticles = articles => ({ type: ADD_ARTICLES, articles })
 export const toggleArticles = id => ({ type: TOGGLE_ARTICLE, id })
 
-export const getArticles = (method, url) => {
+export const getArticles = url => {
 	return async dispatch => {
-		const generateId = () => {
-			return (
-				Math.random().toString(32).substring(2, 10) + (+new Date()).toString(32)
-			)
-		}
-		let res = await requestXMLData(method, url)
+		const res = await fetchXMLData(url)
 		let arrForArticles = []
 		let articleTitle = res.querySelectorAll('topic')
 		let articleContent = res.querySelectorAll('content')
@@ -60,7 +56,6 @@ export const getArticles = (method, url) => {
 			}
 		})
 		dispatch(addArticles(arrForArticles))
-        
 	}
 }
 

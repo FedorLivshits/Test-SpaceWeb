@@ -4,6 +4,7 @@ import { Sidebar } from './components/Sidebar/Sidebar'
 import { UserInfoPanel } from './components/UserInfoPanel/UserInfoPanel'
 import { ArticlesPanel } from './components/ArticlesPanel/ArticlesPanel'
 import { Footer } from './components/Footer/Footer'
+import { Route } from 'react-router-dom'
 
 const App = () => {
 	return (
@@ -12,7 +13,7 @@ const App = () => {
 				<Sidebar />
 				<div className='content'>
 					<UserInfoPanel />
-					<ArticlesPanel />
+					<Route exact path='/' render={() => <ArticlesPanel />} />
 				</div>
 				<Footer />
 			</div>
