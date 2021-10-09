@@ -29,31 +29,30 @@ export const ArticlesPanel = () => {
 							<>
 								{item.isOpen ? (
 									<li
-										className='article__item article-item--active'
+										className='article__item article__item--active'
 										key={item.id}>
-										<div className='article__head'>
-											<h6 className='article__title'>{item.title}</h6>
-											<button
-												className='article__btn'
-												onClick={() => onArticleClick(item.id)}>
-												<img
-													className='article__btn-icon'
-													src={arrow}
-													alt='arrow-btn'
-												/>
-											</button>
-										</div>
 										<div
 											dangerouslySetInnerHTML={{ __html: item.content }}
-											className='article__content article__content--active'></div>
+											className='article__content article__content--active'>
+
+                                        </div>
+										<button
+											className='article__btn article__btn--active'
+											onClick={() => onArticleClick(item.id)}>
+											<img
+												className='article__btn-icon article__btn-icon--active'
+												src={arrow}
+												alt='arrow-btn'
+											/>
+										</button>
 									</li>
 								) : (
-									<li className='article__item' key={item.id}>
+									<li className='article__item' key={item.id}  onClick={() => onArticleClick(item.id)}>
 										<div className='article__head'>
 											<h6 className='article__title'>{item.title}</h6>
 											<button
 												className='article__btn'
-												onClick={() => onArticleClick(item.id)}>
+												>
 												<img
 													className='article__btn-icon'
 													src={arrow}

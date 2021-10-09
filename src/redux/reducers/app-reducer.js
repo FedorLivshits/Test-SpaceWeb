@@ -50,13 +50,15 @@ export const getArticles = (method, url) => {
 			arrForArticles.push(objForArticle)
 		})
 		articleContent.forEach((c, i) => {
-			arrForArticles[i].content = c.innerHTML
+            let text = c.innerHTML.replace(/]]>/gi, '');
+			arrForArticles[i].content = text
+        // ]]>
 		})
 		arrForArticles = arrForArticles.map(item => {
 			return {
 				...item,
 				isOpen: false,
-				id: generateId(),
+				id: generateId()
 			}
 		})
 		dispatch(addArticles(arrForArticles))
