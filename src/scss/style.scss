@@ -119,11 +119,27 @@
 		cursor: pointer;
 	}
 	&__content {
-		display: none;
+        display: none;
 		max-width: 760px;
 		padding-bottom: 24px;
 	}
 }
+
+// .article__content{
+//     max-width: 900px;
+//     padding: 50px;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .article__content img{
+//    object-fit: contain;
+//    max-width: 100%;
+// }
+
+// .article__content code{
+//     background-color: aliceblue;
+// }
 .footer {
 	grid-column: span 2;
 	display: flex;
