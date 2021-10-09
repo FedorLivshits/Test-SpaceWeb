@@ -6,6 +6,7 @@ import domen from './images/vector/domen-icon.svg'
 import journal from './images/vector/journal-icon.svg'
 import vps from './images/vector/vps-icon.svg'
 import notification from './images/vector/notification-icon.svg'
+import arrow from './images/vector/arrow-icon.svg'
 
 const App = () => {
 	return (
@@ -64,37 +65,58 @@ const App = () => {
 					<section className='content__header'>
 						<ul className='content__header-nav'>
 							<li className='account'>
-								<a href='/#' className='account__link'>
+								<a className='account__link' href='/#'>
 									100.00 ₽
 								</a>
 							</li>
-							<li className='user'>
+							<li className='notification'>
 								<a href='/#' className='notification__link'>
 									<img
 										src={notification}
 										alt='notifications'
 										className='notification__link-img'
 									/>
+									<span className='notification__count'>1</span>
+								</a>
+							</li>
+							<li className='user'>
+								<a href='/#' className='user__link'>
 									vikavishny
 								</a>
 							</li>
 							<li className='exit'>
 								<a href='/#' className='exit__link'>
-									{' '}
-									Выход{' '}
+									Выход
 								</a>
 							</li>
 						</ul>
 					</section>
 					<section className='journal'>
 						<div className='journal__header'>
-							<h2 className='journal__subtitle'>Бортовой журнал</h2>
-							<h1 className='journal__title'>Бортовой журнал</h1>
+							<h2 className='journal__header-subtitle'>Бортовой журнал</h2>
+							<h1 className='journal__header-title'>Бортовой журнал</h1>
 						</div>
 						<ul className='article__items'>
 							<li className='article__item'>
-								<h6 className='article__title'>nvsfuvndv</h6>
-								<div className='article__content'></div>
+								<div className='article__head'>
+									<h6 className='article__title'>
+										Топ-6 сервисов для проверки кроссбраузерности сайта
+									</h6>
+									<button className='article__btn'>
+										<img
+											className='article__btn-icon'
+											src={arrow}
+											alt='arrow-btn'
+										/>
+									</button>
+								</div>
+								<div className='article__content'>
+									Хостинг – услуга, в рамках которой вы сможете разместить и
+									администрировать ваши сайты в сети. В одной из прошлых статей
+									мы уже разобрали отличия платного от бесплатного хостинга,
+									теперь же хотим рассказать, как можно сэкономить при выборе
+									платного хостинга.
+								</div>
 							</li>
 						</ul>
 					</section>
@@ -111,8 +133,8 @@ const App = () => {
 					</div>
 					<div className='footer__phones'>
 						<div className='footer__phone'>
-							<a href='tel:+78123341222'>+7 (812) 334-12-22 </a>(в
-							Санкт-Петербурге)
+							<a href='tel:+78123341222'>+7 (812) 334-12-22 </a>
+							(в Санкт-Петербурге)
 						</div>
 						<div className='footer__phone'>
 							<a href='tel:+74956631612'>+7 (495) 663-16-12</a>
