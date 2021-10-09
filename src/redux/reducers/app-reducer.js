@@ -5,7 +5,6 @@ const TOGGLE_ARTICLE = 'app-reducer/TOGGLE_ARTICLE'
 
 let initialState = {
 	articles: null,
-	loading: false,
 }
 
 const appReducer = (state = initialState, action) => {
@@ -15,16 +14,16 @@ const appReducer = (state = initialState, action) => {
 				...state,
 				articles: action.articles,
 			}
-        case TOGGLE_ARTICLE:
-            return {
-                ...state,
-                articles: state.articles.map(a => {
-                    if(a.id === action.id){
-                        return {...a, isOpen: !a.isOpen}
-                    }
-                    return a
-                })
-            }
+		case TOGGLE_ARTICLE:
+			return {
+				...state,
+				articles: state.articles.map(a => {
+					if (a.id === action.id) {
+						return { ...a, isOpen: !a.isOpen }
+					}
+					return a
+				}),
+			}
 		default:
 			return state
 	}
@@ -50,18 +49,18 @@ export const getArticles = (method, url) => {
 			arrForArticles.push(objForArticle)
 		})
 		articleContent.forEach((c, i) => {
-            let text = c.innerHTML.replace(/]]>/gi, '');
+			let text = c.innerHTML.replace(/]]>/gi, '')
 			arrForArticles[i].content = text
-        // ]]>
 		})
 		arrForArticles = arrForArticles.map(item => {
 			return {
 				...item,
 				isOpen: false,
-				id: generateId()
+				id: generateId(),
 			}
 		})
 		dispatch(addArticles(arrForArticles))
+        
 	}
 }
 

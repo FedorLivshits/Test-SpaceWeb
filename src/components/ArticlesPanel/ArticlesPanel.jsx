@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import arrow from '../../images/vector/arrow-icon.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { getArticles } from '../../redux/reducers/app-reducer'
-import { articlesSelector } from '../../redux/selectors'
+import { articlesSelector, loadingSelector } from '../../redux/selectors'
 import { toggleArticles } from '../../redux/reducers/app-reducer'
 
 export const ArticlesPanel = () => {
@@ -16,6 +16,18 @@ export const ArticlesPanel = () => {
 	const onArticleClick = id => {
 		dispatch(toggleArticles(id))
 	}
+	if (!articles) {
+		return (
+			<section className='articles'>
+				<div className='articles__header'>
+					<h2 className='articles__header-subtitle'>Бортовой журнал</h2>
+					<h1 className='articles__header-title'>Бортовой журнал</h1>
+				</div>
+				<div className='articles__loading'>Загрузка...</div>
+			</section>
+		)
+	}
+
 	return (
 		<section className='articles'>
 			<div className='articles__header'>
@@ -33,9 +45,7 @@ export const ArticlesPanel = () => {
 										key={item.id}>
 										<div
 											dangerouslySetInnerHTML={{ __html: item.content }}
-											className='article__content article__content--active'>
-
-                                        </div>
+											className='article__content article__content--active'></div>
 										<button
 											className='article__btn article__btn--active'
 											onClick={() => onArticleClick(item.id)}>
@@ -47,12 +57,13 @@ export const ArticlesPanel = () => {
 										</button>
 									</li>
 								) : (
-									<li className='article__item' key={item.id}  onClick={() => onArticleClick(item.id)}>
+									<li
+										className='article__item'
+										key={item.id}
+										onClick={() => onArticleClick(item.id)}>
 										<div className='article__head'>
 											<h6 className='article__title'>{item.title}</h6>
-											<button
-												className='article__btn'
-												>
+											<button className='article__btn'>
 												<img
 													className='article__btn-icon'
 													src={arrow}

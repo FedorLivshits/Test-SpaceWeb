@@ -96,6 +96,14 @@
 			margin-bottom: 16px;
 		}
 	}
+	&__loading {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 50px;
+		color: #062436;
+		font-size: 30px;
+	}
 }
 .article {
 	&__item {
