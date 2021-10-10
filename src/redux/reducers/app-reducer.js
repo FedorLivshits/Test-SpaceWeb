@@ -3,7 +3,7 @@ import { generateId } from '../helpers/idGenerator'
 
 const ADD_ARTICLES = 'app-reducer/ADD_ARTICLES'
 const TOGGLE_ARTICLE = 'app-reducer/TOGGLE_ARTICLE'
-const SET_MENU_OPEN = 'app-reducer/TOGGLE_MENU_OPEN'
+const SET_MENU_OPEN = 'app-reducer/SET_MENU_OPEN'
 
 let initialState = {
 	articles: null,
