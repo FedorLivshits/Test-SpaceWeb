@@ -5,6 +5,15 @@ import { getArticles } from '../../redux/reducers/app-reducer'
 import { articlesSelector } from '../../redux/helpers/selectors'
 import { toggleArticles } from '../../redux/reducers/app-reducer'
 
+const ArticlesPanelHeader = () => {
+	return (
+		<div className='articles__header'>
+			<h2 className='articles__header-subtitle'>Бортовой журнал</h2>
+			<h1 className='articles__header-title'>Бортовой журнал</h1>
+		</div>
+	)
+}
+
 export const ArticlesPanel = () => {
 	const dispatch = useDispatch()
 	const articles = useSelector(articlesSelector)
@@ -19,10 +28,7 @@ export const ArticlesPanel = () => {
 	if (!articles) {
 		return (
 			<section className='articles'>
-				<div className='articles__header'>
-					<h2 className='articles__header-subtitle'>Бортовой журнал</h2>
-					<h1 className='articles__header-title'>Бортовой журнал</h1>
-				</div>
+				<ArticlesPanelHeader />
 				<div className='articles__loading'>Загрузка...</div>
 			</section>
 		)
@@ -30,10 +36,7 @@ export const ArticlesPanel = () => {
 
 	return (
 		<section className='articles'>
-			<div className='articles__header'>
-				<h2 className='articles__header-subtitle'>Бортовой журнал</h2>
-				<h1 className='articles__header-title'>Бортовой журнал</h1>
-			</div>
+			<ArticlesPanelHeader />
 			<ul className='article__items'>
 				{articles &&
 					articles.map(item => {

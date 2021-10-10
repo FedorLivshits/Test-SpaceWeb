@@ -12,8 +12,12 @@ import { menuOpenSelector } from '../../redux/helpers/selectors'
 export const Sidebar = () => {
 	const menuOpen = useSelector(menuOpenSelector)
 
+	const sidebarActive = () => {
+		return menuOpen ? 'sidebar sidebar--active' : 'sidebar'
+	}
+
 	return (
-		<aside className={menuOpen ? 'sidebar sidebar--active' : 'sidebar'}>
+		<aside className={sidebarActive()}>
 			<div className='sidebar__inner'>
 				<NavLink className='sidebar__logo' to='/main'>
 					<img className='sidebar__logo-img' src={logo} alt='logo' />

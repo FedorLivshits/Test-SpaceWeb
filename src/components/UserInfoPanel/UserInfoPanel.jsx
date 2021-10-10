@@ -11,14 +11,19 @@ export const UserInfoPanel = () => {
 	const onMenuOpen = () => {
 		dispatch(setMenuOpen(!menuOpen))
 	}
+
+    const burgerMenuActive = () => {
+       return menuOpen ? 'burger-menu burger-menu--active' : 'burger-menu'
+    }
+    
 	return (
 		<section className='user-info'>
 			<div
-				className={menuOpen ? 'burger-menu burger-menu--active' : 'burger-menu'}
+				className={burgerMenuActive()}
 				onClick={onMenuOpen}>
-				<span></span>
-				<span></span>
-				<span></span>
+				<span />
+				<span />
+				<span />
 			</div>
 			<ul className='user-info__nav'>
 				<li className='account'>
