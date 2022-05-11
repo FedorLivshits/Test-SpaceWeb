@@ -1,5 +1,6 @@
 export const generateId = () => {
-    return (
-        Math.random().toString(32).substring(2, 10) + (+new Date()).toString(32)
-    )
-}
+  return (
+    Math.random().toString(32).substring(2, 10) + (+new Date()).toString(32)
+  );
+};
+console.log('!!!!!');
